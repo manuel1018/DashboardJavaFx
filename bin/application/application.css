@@ -1,0 +1,101 @@
+.root {
+    -fx-primary-color: #7c72cb;      
+    -fx-dark-color:#4b479a;
+}
+
+.menu-bar{
+		 -fx-background-color: #15206b;
+		 
+}
+.menu-bar:hover{
+	 -fx-cursor: move;
+}
+/*Default javafx* */
+.menu .label
+{
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight:bold;
+   
+}
+.menu .label:hover{
+	-fx-cursor: default;
+}
+.menu-item .label{
+	-fx-text-fill: white;	 
+}
+
+.context-menu{
+	-fx-background-color: -fx-primary-color;
+}
+/* ///////////// */
+.buttons-menu{
+	 /*-fx-background-color: #7c72cb;*/
+	 -fx-background-color: -fx-primary-color;
+	 -fx-cursor: hand;
+	 -fx-font-size: 18px;	 
+	 -fx-font-weight: bold;
+	 -fx-text-fill:white;
+	 -fx-padding:15px;	
+	 -fx-background-radius: 30;
+}
+
+.buttons-menu:hover{
+	 -fx-background-color: #aea1ff;
+	 -fx-background-radius: 30;
+}
+
+.side_bar{/** Refers to the background label in the left side*/
+	-fx-background-color: -fx-primary-color;
+	-fx-background-radius:  0 100 0 140;
+	-fx-padding:0 0 100 0;
+}
+.label-side-menu{/*Refers to the title Project Manager */
+	/*-fx-background-color: -fx-primary-color;*/
+	-fx-padding:20px;
+	-fx-font-size: 28px;	
+	-fx-text-fill:#aea1ff;
+	-fx-font-weight: bolder;
+	-fx-alignment:center;		
+}
+.label-welcome{/**Background in the top WELCOME */
+	-fx-background-color:-fx-dark-color ;
+	-fx-text-fill:white;
+	-fx-font-size:30px;
+	-fx-padding:20px;
+	-fx-font-weight: bold;
+	-fx-background-radius:  0 0 100 0;
+	/*-fx-background-radius:  30 30 0 30;*/
+	/*-fx-background-radius:  0 30 30 0;*/
+}
+.label-title-table{
+	-fx-font-size: 18px;	 
+	-fx-font-weight: bold;
+	-fx-text-fill:black;
+	-fx-alignment:center;
+	-fx-padding:10px;
+}
+
+.main-pane{
+	 -fx-background-color: #e2d2ff;
+	
+}
+.text-path{
+	-fx-font-size: 12px;	
+	-fx-font-weight: bold;
+	 -fx-padding: 5px;
+}
+.hbox-paths{
+	/*-fx-padding-bottom:10px;*/
+	-fx-padding:0 0 0 10;
+	 -fx-background-insets: 5px;
+}
+.box-path{
+	
+}
+.chage-button{
+	-fx-font-weight: bold;
+}
+.search-button{
+	-fx-font-weight: bold;
+}

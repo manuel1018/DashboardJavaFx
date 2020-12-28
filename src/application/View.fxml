@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="anchor" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" >
+   <children>
+      <BorderPane fx:id="mainBoard" layoutX="0" layoutY="0" maxHeight="-Infinity" maxWidth="-Infinity"
+       minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="800.0" styleClass="main-pane">
+         <top>
+           <MenuBar fx:id="menuBar" >
+     	 	<menus>
+	         <Menu text="| File">
+	            <items>
+	               <MenuItem text="New"/>
+	               <MenuItem text="Open"/>
+	               <MenuItem text="Save"/>
+	               <MenuItem text="Save As"/>
+	               <SeparatorMenuItem  />
+	               <MenuItem fx:id="exitBtn" text="Exit" onAction="#exit"/>
+	            </items>
+	         </Menu>
+	          <Menu text="| Edit">
+	            <items>
+	               <MenuItem text="Copy"/>
+	               <MenuItem text="Cut"/>
+	               <MenuItem text="Paste"/>
+	            </items>
+         </Menu>
+         <Menu text="| Help">
+            <items>
+               <MenuItem text="Search" disable="true"/>
+               <MenuItem text="Online Manual" visible="false"/>
+               <SeparatorMenuItem />
+               <MenuItem text="About" />
+            </items>
+         </Menu>
+	        </menus>
+	        </MenuBar>
+         </top>
+          <left>            
+               <StackPane>
+               <children>
+               <Label fx:id="dumyBoard" maxWidth="Infinity" prefHeight="700.0" prefWidth="100.0" 
+               maxHeight="Infinity" styleClass="label-welcome" />
+               <VBox prefHeight="700.0" prefWidth="300.0" BorderPane.alignment="CENTER"  maxHeight="Infinity" styleClass="side_bar" fx:id="panelButtons">
+               <children>
+                  <Label fx:id="sideBoard" text="Project tracker" maxWidth="Infinity"
+                	prefWidth="50.0" styleClass="label-side-menu"  />
+                	<Button text="Start" mnemonicParsing="false" prefHeight="25.0"
+                	 prefWidth="119.0" maxWidth="Infinity" styleClass="buttons-menu">
+                     <font>
+                        <Font size="16.0" /> 
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false"  maxWidth="Infinity"
+                	prefWidth="50.0" text="Agregar" styleClass="buttons-menu" onAction="#hello">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="119.0" maxWidth="Infinity" text="Modificar"
+                   styleClass="buttons-menu">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="112.0" maxWidth="Infinity" text="Eliminar"
+                   styleClass="buttons-menu">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="116.0" maxWidth="Infinity" text="Configuracion"
+                   styleClass="buttons-menu">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="135.0" maxWidth="Infinity" text="Acerca"
+                   styleClass="buttons-menu">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Button>
+                 </children>
+            	 </VBox>
+                  </children>
+                  </StackPane>            
+         </left>
+         <center>       
+            <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+               <children>
+                <Label text="WELCOME" maxWidth="Infinity"
+                	prefWidth="50.0" styleClass="label-welcome"/>
+               	<Label text="Projects List" maxWidth="Infinity"
+                	prefWidth="50.0" styleClass="label-title-table"  />
+                	
+                	  <HBox fx:id="textBoxPaths" styleClass="hbox-paths" prefHeight="20.0" prefWidth="Infinity" alignment="CENTER"  maxHeight="Infinity" >				                
+				          <children>
+				            	 <VBox>
+							       	<HBox>
+							       		<Label text="Directory" styleClass="text-path"/>				            	
+							          	<TextField fx:id="oldDrectory" prefHeight="40" styleClass="box-path"/>
+							          	<Button prefWidth="100.0" text="Search" styleClass="search-button" onAction="#search">
+							          	</Button>
+							          	<Label text="New directory" styleClass="text-path"/>
+		      							<TextField fx:id="newDirectory" prefHeight="40" styleClass="box-path"/>
+		      							<Button prefWidth="100.0" text="Swamp" styleClass="chage-button" onAction="#change">
+		      							</Button>
+							       	</HBox>
+							          <HBox>				        	
+							        	<Label text="Type archive" styleClass="text-path"/>
+			      						<TextField fx:id="typeArchive" prefWidth="40" styleClass="box-path"/>
+			      						<Label fx:id="status" text="" styleClass="text-path"/>
+							        </HBox>	
+							       </VBox>      										
+				          </children>					          		         
+				       </HBox>	     			        
+                  <TableView fx:id="viewTable" prefHeight="200.0" prefWidth="200.0" >
+                  <columnResizePolicy><TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/></columnResizePolicy>	
+                    <columns>
+                      <TableColumn fx:id="nameColumn" prefWidth="75.0" text="Nombre">                           
+                        </TableColumn>
+                      <TableColumn prefWidth="75.0" text="C2">                           
+                        </TableColumn>
+                    </columns>
+                  </TableView>
+               </children>
+            </VBox>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>
