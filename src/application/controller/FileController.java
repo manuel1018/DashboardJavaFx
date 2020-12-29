@@ -23,7 +23,7 @@ import javafx.stage.Stage;
 
 public class FileController implements Initializable{
 	
-	 @FXML
+	  @FXML
 	  private AnchorPane anchor;
 	  @FXML
 	  private VBox panelButtons;
