@@ -1,6 +1,6 @@
 # DashboardJavaFx
-### General purpose dashboard developed with Java
-
+### Dashboard for gym application developed with Java
+//////////////////////////////////////////////
 ### View:
 ![Optional Text](./src/img/presentation.png)
 
