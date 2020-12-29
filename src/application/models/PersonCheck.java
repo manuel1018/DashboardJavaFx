@@ -7,7 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="person-check-state")
+@Table(name="person-check")
 public class PersonCheck {
 	@Column(name = "active")
     private boolean isUserActive;
@@ -17,6 +17,7 @@ public class PersonCheck {
     private LocalDate checkInHour;
 	@Column(name = "departure-hour")
     private LocalDate departureHour;
+	
 	public boolean isUserActive() {
 		return isUserActive;
 	}

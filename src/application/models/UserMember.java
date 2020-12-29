@@ -9,10 +9,10 @@ public class UserMember extends PersonData {
 	public String password;	
     public float weight;
     public float height;    
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "type-mebership")
     public Membership typeMembership;    
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "type-payment")
     public TypePayment typePayment;    
     public String notes;

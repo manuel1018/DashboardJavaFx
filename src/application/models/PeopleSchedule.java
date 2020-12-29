@@ -21,9 +21,12 @@ public class PeopleSchedule {
 	private LocalDate endHour;
 	@Column(name = "number-people-allowed")
 	private int numberOfPersonsAllowed;
-	@ManyToOne(cascade=CascadeType.PERSIST)    
+	
+	@ManyToOne
 	@JoinColumn(name = "list-users")
 	private List<PersonData> listUsers;
+	
+	
 	public int getId() {
 		return id;
 	}

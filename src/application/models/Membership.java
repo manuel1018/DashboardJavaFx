@@ -19,6 +19,7 @@ class Membership{
 	 private LocalTime beginHour;
 	 @Column(name = "hour-begin-inscription")
 	 private LocalTime endHour;
+	 
 	public int getId() {
 		return id;
 	}

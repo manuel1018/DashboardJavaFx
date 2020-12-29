@@ -5,12 +5,13 @@ import java.time.LocalDate;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="instructor-data")
-public class Instructor extends PersonData {	
+@Table(name="trainer-data")
+public class Trainer extends PersonData {	
 
 	public String password;	
     private double salary ;
@@ -22,6 +23,10 @@ public class Instructor extends PersonData {
 	@OneToOne
     @JoinColumn(name = "person-check-state")
 	private PersonCheck attendance;
+	@OneToMany(mappedBy = "trainer-data")
+	private ClassTrainer classAtMoment;
+
+	
 	public String getPassword() {
 		return password;
 	}
