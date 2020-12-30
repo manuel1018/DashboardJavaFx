@@ -2,6 +2,12 @@ package application;
 	
 import java.util.Set;
 
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+
+//import com.mysql.cj.xdevapi.SessionFactory;
+
 import application.controller.FileController;
 import application.models.Trainer;
 import javafx.application.Application;
@@ -36,15 +42,34 @@ public class Main extends Application {
 	}
 	
 	public static void main(String[] args) {
+		setAndLoad();
 		launch(args);
 	}
 	
 	public static void setAndLoad() {
-		Trainer trainer=new Trainer("Jhon", "Wayne", "ABJM12", 60000, 40);
-		Set<String>classes=trainer.getClasses();
 		
-		classes.add("Spinnig");
-		classes.add("Yoga");
-		classes.add("Aerobics");
-	}
+		SessionFactory factory= new Configuration()
+				.configure("D:\\MaterialForWork2020\\JAVA\\eclipseProjects\\BasicDashboard\\src\\main\\resources\\hibernate.cfg.xml")
+				.addAnnotatedClass(Trainer.class)
+				.buildSessionFactory();
+		Session session=factory.getCurrentSession();
+		
+		try {
+			System.out.println("Creating a new object...");
+			Trainer trainer=new Trainer("Jhon", "Wayne", "ABJM12", 60000, 40);
+			Set<String>classes=trainer.getClasses();
+			
+			classes.add("Spinnig");
+			classes.add("Yoga");
+			classes.add("Aerobics");
+			
+			session.beginTransaction();
+			System.out.println("Saving a new object...");
+			session.save(trainer);
+			session.getTransaction().commit();
+			
+		}finally {
+			factory.close();
+		}
+	} 
 }
