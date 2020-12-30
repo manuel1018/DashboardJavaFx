@@ -5,6 +5,9 @@ import java.time.LocalTime;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -19,6 +22,9 @@ public class Schedule {
 	private LocalDate startDate;
 	@Column(name="state")
 	private boolean isActive;
+	@OneToMany(mappedBy = "trainer-data")
+	private PersonSchedule personId;
+	
 	public int getId() {
 		return id;
 	}

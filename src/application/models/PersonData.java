@@ -24,6 +24,10 @@ public class PersonData {////Creation
 	private String medicalConditions;
 	private String email;	
 	
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "schedule_id", referencedColumnName = "id")
+	private PersonSchedule schedule;
+	
 	public int getId() {
 		return id;
 	}

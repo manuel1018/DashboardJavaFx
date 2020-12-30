@@ -58,8 +58,5 @@ public class ClassTrainer {
 	}
 	public void setEndHour(LocalDate endHour) {
 		this.endHour = endHour;
-	}
-	
-	
-	
+	}	
 }

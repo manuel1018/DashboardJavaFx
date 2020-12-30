@@ -43,7 +43,4 @@ public class PersonCheck {
 		this.departureHour = departureHour;
 	}
 	
-	
-	
-	
 }
