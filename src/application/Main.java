@@ -1,6 +1,9 @@
 package application;
 	
+import java.util.Set;
+
 import application.controller.FileController;
+import application.models.Trainer;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
@@ -34,5 +37,14 @@ public class Main extends Application {
 	
 	public static void main(String[] args) {
 		launch(args);
+	}
+	
+	public static void setAndLoad() {
+		Trainer trainer=new Trainer("Jhon", "Wayne", "ABJM12", 60000, 40);
+		Set<String>classes=trainer.getClasses();
+		
+		classes.add("Spinnig");
+		classes.add("Yoga");
+		classes.add("Aerobics");
 	}
 }
