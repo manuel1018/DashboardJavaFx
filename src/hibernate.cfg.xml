@@ -8,22 +8,29 @@
 <session-factory>
 
 <!-- JDBC Database connection settings -->
-<property name="connection.url">jdbc:mysql://${MYSQL_HOST:localhost}:3306/gym_dashboard?createDatabaseIfNotExist=true&amp;useUnicode=yes&amp;characterEncoding=UTF-8</property>
+<property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+<property name="connection.url">jdbc:mysql://localhost:3306/gym_dashboard?useSSL=false&amp;serverTimezone=UTC&amp;</property>
 <property name="connection.username">root</property>
 <property name="connection.password">password</property>
-<property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+<property name="dialect">org.hibernate.dialect.MySQLDialect</property>
 
 <!-- JDBC connection pool settings ... using built-in test pool -->
 <property name="connection.pool_size">1</property>
 
 <!-- Select our SQL dialect -->
-<property name="dialect">org.hibernate.dialect.MySQL5Dialect</property>
+<property name="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</property>
+ <property name="show_sql">false</property>
+
 
 <!-- Echo the SQL to stdout -->
 <property name="show_sql">true</property>
 
+<property name="hbm2ddl.auto">create</property>
+
 <!-- Set the current session context -->
 <property name="current_session_context_class">thread</property>
+
+<property name="cache.provider_class">org.hibernate.cache.NoCacheProvider</property>
 
 </session-factory>
 

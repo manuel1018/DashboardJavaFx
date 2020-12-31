@@ -45,31 +45,42 @@ public class Main extends Application {
 		setAndLoad();
 		launch(args);
 	}
-	
+	  
 	public static void setAndLoad() {
 		
 		SessionFactory factory= new Configuration()
-				.configure("D:\\MaterialForWork2020\\JAVA\\eclipseProjects\\BasicDashboard\\src\\main\\resources\\hibernate.cfg.xml")
-				.addAnnotatedClass(Trainer.class)
-				.buildSessionFactory();
-		Session session=factory.getCurrentSession();
+								.configure("hibernate.cfg.xml")///This is the default name,it's not necesary to be explicit
+								.addAnnotatedClass(Trainer.class)// if the name as equal as this
+								.buildSessionFactory();
+		
+		//Session session=factory.getCurrentSession();
 		
 		try {
 			System.out.println("Creating a new object...");
-			Trainer trainer=new Trainer("Jhon", "Wayne", "ABJM12", 60000, 40);
-			Set<String>classes=trainer.getClasses();
 			
+			Trainer trainer=new Trainer("Wayne","Jhon","ABJM",600,40);
+			
+			/*Set<String>classes=trainer.getClasses();			    
 			classes.add("Spinnig");
 			classes.add("Yoga");
-			classes.add("Aerobics");
+			classes.add("Aerobics");*/
 			
-			session.beginTransaction();
+			//session.beginTransaction();
+			Session session = factory.openSession();
+	        session.beginTransaction();
+			
 			System.out.println("Saving a new object...");
-			session.save(trainer);
-			session.getTransaction().commit();
 			
-		}finally {
-			factory.close();
+			session.save(trainer);
+			
+			session.getTransaction().commit();
+			session.close();
+			//factory.close();
+			System.out.println("Object has been saved...");
+		}finally { 
+			//session.close();
+			//factory.close();
+		
 		}
 	} 
 }
